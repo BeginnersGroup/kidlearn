@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.lenovo_25.myapplication.SecondActivity"
+    tools:showIn="@layout/activity_second">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:weightSum="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/background_light"
+                app:srcCompat="@drawable/alphabetstext"
+                android:onClick="CAPSATOZ" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="SMALLaTOz"
+                app:srcCompat="@drawable/smallalphabetstext" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="ANIMALS"
+                app:srcCompat="@drawable/animalstext" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="BIRDS"
+                app:srcCompat="@drawable/birdstext" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="BODYPARTS"
+                app:srcCompat="@drawable/boyparttext" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="COLORS"
+                app:srcCompat="@drawable/colortext" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="DAYS"
+                app:srcCompat="@drawable/daystext" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="FRUITS"
+                app:srcCompat="@drawable/fruittext" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="MONTHS"
+                app:srcCompat="@drawable/monthstext" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="NUMBERS"
+                app:srcCompat="@drawable/numbertext" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="PLACES"
+                app:srcCompat="@drawable/placetext" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="PROFESSIONS"
+                app:srcCompat="@drawable/professionstext" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="SHAPES"
+                app:srcCompat="@drawable/shapetext" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="SOLORSYSTEM"
+                app:srcCompat="@drawable/solarsystemtext" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="VEGETABLES"
+                app:srcCompat="@drawable/vegitablestext" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="VEHICLES"
+                app:srcCompat="@drawable/vehiclestext" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/background_light"
+                android:onClick="VIDEOS"
+                app:srcCompat="@drawable/videostext" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

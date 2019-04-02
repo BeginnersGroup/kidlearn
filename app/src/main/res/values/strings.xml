@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_capital_alphabet">CapitalAlphabetActivity</string>
+    <string name="title_activity_small_alphabet">SmallAlphabetActivity</string>
+    <string name="title_activity_numbers">NumbersActivity</string>
+    <string name="title_activity_drawable_activity">DrawableActivityActivity</string>
+    <string name="title_activity_animals">AnimalsActivity</string>
+    <string name="title_activity_birds">BirdsActivity</string>
+    <string name="title_activity_body_parts">BodyPartsActivity</string>
+    <string name="title_activity_colors">ColorsActivity</string>
+    <string name="title_activity_days">DaysActivity</string>
+    <string name="title_activity_fruits">FruitsActivity</string>
+    <string name="title_activity_months">MonthsActivity</string>
+    <string name="title_activity_places">PlacesActivity</string>
+    <string name="title_activity_professions">ProfessionsActivity</string>
+    <string name="title_activity_shapes">ShapesActivity</string>
+    <string name="title_activity_sight_words">SightWordsActivity</string>
+    <string name="title_activity_solor_system">SolorSystemActivity</string>
+    <string name="title_activity_vegetables">VegetablesActivity</string>
+    <string name="title_activity_vehicles">VehiclesActivity</string>
+    <string name="title_activity_videos">VideosActivity</string>
+</resources>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.lenovo_25.myapplication.SmallAlphabetActivity"
+    tools:showIn="@layout/activity_small_alphabet">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="4"
+            android:rowCount="7"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <ImageView
+                android:id="@+id/aa"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="1"
+                app:srcCompat="@drawable/aa" />
+
+            <ImageView
+                android:id="@+id/ImageView2"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="2"
+                app:srcCompat="@drawable/bb" />
+
+            <ImageView
+                android:id="@+id/ImageView3"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="3"
+                app:srcCompat="@drawable/cc" />
+
+            <ImageView
+                android:id="@+id/ImageView4"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="4"
+                app:srcCompat="@drawable/dd" />
+
+            <ImageView
+                android:id="@+id/ImageView5"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="5"
+                app:srcCompat="@drawable/ee" />
+
+            <ImageView
+                android:id="@+id/ImageView6"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="6"
+                app:srcCompat="@drawable/ff" />
+
+            <ImageView
+                android:id="@+id/ImageView7"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="7"
+                app:srcCompat="@drawable/gg" />
+
+            <ImageView
+                android:id="@+id/ImageView8"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="8"
+                app:srcCompat="@drawable/hh" />
+
+            <ImageView
+                android:id="@+id/ImageView9"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="9"
+                app:srcCompat="@drawable/ii" />
+
+            <ImageView
+                android:id="@+id/ImageView10"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="10"
+                app:srcCompat="@drawable/jj" />
+
+            <ImageView
+                android:id="@+id/ImageView11"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="11"
+                app:srcCompat="@drawable/kk" />
+
+            <ImageView
+                android:id="@+id/ImageView12"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="12"
+                app:srcCompat="@drawable/ll" />
+
+            <ImageView
+                android:id="@+id/ImageView13"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="13"
+                app:srcCompat="@drawable/mm" />
+
+            <ImageView
+                android:id="@+id/ImageView14"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="14"
+                app:srcCompat="@drawable/nn" />
+
+            <ImageView
+                android:id="@+id/ImageView15"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="15"
+                app:srcCompat="@drawable/oo" />
+
+            <ImageView
+                android:id="@+id/ImageView16"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="16"
+                app:srcCompat="@drawable/pp" />
+
+            <ImageView
+                android:id="@+id/ImageView17"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="17"
+                app:srcCompat="@drawable/qq" />
+
+            <ImageView
+                android:id="@+id/ImageView18"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="18"
+                app:srcCompat="@drawable/rr" />
+
+            <ImageView
+                android:id="@+id/ImageView19"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="19"
+                app:srcCompat="@drawable/ss" />
+
+            <ImageView
+                android:id="@+id/ImageView20"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="20"
+                app:srcCompat="@drawable/tt" />
+
+            <ImageView
+                android:id="@+id/ImageView21"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="21"
+                app:srcCompat="@drawable/uu" />
+
+            <ImageView
+                android:id="@+id/ImageView22"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="22"
+                app:srcCompat="@drawable/vv" />
+
+            <ImageView
+                android:id="@+id/ImageView23"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="23"
+                app:srcCompat="@drawable/ww" />
+
+            <ImageView
+                android:id="@+id/ImageView24"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="24"
+                app:srcCompat="@drawable/xx" />
+
+            <ImageView
+                android:id="@+id/ImageView28"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="28" />
+
+            <ImageView
+                android:id="@+id/ImageView25"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="25"
+                app:srcCompat="@drawable/yy" />
+
+            <ImageView
+                android:id="@+id/ImageView26"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:onClick="a"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="26"
+                app:srcCompat="@drawable/zz" />
+
+            <ImageView
+                android:id="@+id/ImageView29"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_margin="5dp"
+                android:paddingBottom="-5dp"
+                android:paddingTop="-5dp"
+                android:scaleType="fitXY"
+                android:tag="28" />
+        </GridLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
