@@ -1,4 +1,4 @@
-package com.example.lenovo_25.myapplication;
+package com.example.lenovo_25.myapplication.adapters;
 
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.lenovo_25.myapplication.ImageResource;
+import com.example.lenovo_25.myapplication.R;
 
 import java.util.ArrayList;
 
@@ -57,7 +60,7 @@ public class customSwipeAdapter extends PagerAdapter {
         TextView textView=(TextView) item_view.findViewById(R.id.text_view);
 
 
-        Log.d("itempos","pos="+pos+" position="+position);
+//        Log.d("itempos","pos="+pos+" position="+position);
 //        if (pos==position) {
 //            MediaPlayer.create(ctx, resources.get(position).getMpName()).start();
 //        }
@@ -71,7 +74,7 @@ public class customSwipeAdapter extends PagerAdapter {
 //        }
 //        resources.get(pos).playSound(ctx);
 
-        Log.d("position","position="+position+"imgname="+resources.get(position).getImageName());
+//        Log.d("position","position="+position+"imgname="+resources.get(position).getImageName());
 //        mps.get(position).start();
 //        if (imageResource.getLength()<=position) {
 //            MediaPlayer.create(ctx, resources.get(position).getMpName());

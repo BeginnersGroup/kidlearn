@@ -8,4 +8,12 @@
     tools:context="com.example.lenovo_25.myapplication.BodyPartsActivity"
     tools:showIn="@layout/activity_body_parts">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_body_parts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
 </android.support.constraint.ConstraintLayout>

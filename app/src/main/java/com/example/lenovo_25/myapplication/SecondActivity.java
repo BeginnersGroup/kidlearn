@@ -10,6 +10,9 @@ import android.view.View;
 
 public class SecondActivity extends AppCompatActivity {
 
+    public static int menuNo=1;
+
+
     public void CAPSATOZ(View view){
 
         Intent var=new Intent(SecondActivity.this , CapitalAlphabetActivity.class);

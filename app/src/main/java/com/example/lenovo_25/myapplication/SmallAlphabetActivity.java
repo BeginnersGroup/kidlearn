@@ -15,7 +15,7 @@ public class SmallAlphabetActivity extends AppCompatActivity {
         Intent var=new Intent(SmallAlphabetActivity.this , DrawableActivity.class);
         int tag=Integer.parseInt(view.getTag().toString());
         var.putExtra("imagetag",tag);
-        var.putExtra("case","lower");
+        var.putExtra("menuname",2);
         startActivity(var);
     }
 
