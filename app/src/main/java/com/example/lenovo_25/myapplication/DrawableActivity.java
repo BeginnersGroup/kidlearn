@@ -7,11 +7,10 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.widget.Scroller;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lenovo_25.myapplication.adapters.customSwipeAdapter;
-
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import static com.example.lenovo_25.myapplication.adapters.customSwipeAdapter.mp;
@@ -23,6 +22,8 @@ public class DrawableActivity extends Activity {
     customSwipeAdapter adapter;
     ImageResource imageResource;
     ArrayList<ImageResource> resources;
+
+    TextView title_tv;
 
     int[] image_resource;
     int[] mp_resource;
@@ -47,7 +48,6 @@ public class DrawableActivity extends Activity {
 
 //        imageResource=new ImageResource(image_resource,img_name);
 
-
     }
 
     private void setImageResource() {
@@ -60,14 +60,23 @@ public class DrawableActivity extends Activity {
     }
 
     private void setAdapter() {
-        viewPager= (ViewPager) findViewById(R.id.view_pager);
+        viewPager= findViewById(R.id.view_pager);
         adapter=new customSwipeAdapter(this,resources);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(tag-1);
         Log.d("setadapterlog",resources.get(tag-1).getImageName()+"");
-        customSwipeAdapter.mp=MediaPlayer.create(ctxMain, resources.get(tag-1).getMpName());
-        mp.start();
+
+        mp=MediaPlayer.create(ctxMain, resources.get(tag-1).getMpName());
         pos=tag-1;
+        try {
+//            mps.get(pos).prepare();
+//            mps.get(pos).start();
+            mp.start();
+        } catch (Exception e) {
+            Toast.makeText(this,"error:"+e,Toast.LENGTH_LONG).show();
+        }
+//        mp.start();
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
@@ -78,14 +87,25 @@ public class DrawableActivity extends Activity {
             public void onPageSelected(int i) {
 Log.d("mainpagesel","selected i="+i);
                 pos=i;
-                mp=MediaPlayer.create(ctxMain, resources.get(pos).getMpName());
-                mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                    @Override
-                    public void onPrepared(MediaPlayer mp1) {
-//                        mp.prepareAsync();
-                        mp1.start();
-                    }
-                });
+                try {
+
+//                    mps.get(i).prepare();
+//                    mps.get(i).start();
+                    mp.release();
+                    mp=null;
+                    mp = MediaPlayer.create(ctxMain, resources.get(pos).getMpName());
+//                    mp.prepare();
+                    mp.start();
+//                    mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener(){
+//                        @Override
+//                        public void onPrepared(MediaPlayer mp1) {
+////                        mp.prepareAsync();
+//                            mp1.start();
+//                        }
+//                    });
+                } catch(Exception e) {
+                    Toast.makeText(DrawableActivity.this, "media player error:"+e, Toast.LENGTH_SHORT).show();
+                }
 
 
             }
@@ -96,23 +116,21 @@ Log.d("mainpagesel","selected i="+i);
 
             }
         });
-//        viewPager.setCurrentItem();
-
-//        Field mScroller;
-//        mScroller=customSwipeAdapter.class.getDeclaredField()
 
     }
 
     private void setResourceVariables() {
 //        image_resource={R.drawable.a,R.drawable.aa,R.drawable.b};
         // set image names for resource
+        title_tv=findViewById(R.id.title);
         noOfViewPage=26;
         //array for image name and media player both
 
-
+        Toast.makeText(ctxMain, "menu="+menu, Toast.LENGTH_SHORT).show();
         switch (menu) {
             case 1 :  // for capital alphabets
                 // variable contains image name
+                title_tv.setText("Capital Alphabets");
                 String tempArray1[]={"a","b","c","d","e","f","g","h","i","j","k","l","m"
                         ,"n","o","p","q","r","s","t","u","v","w","x","y","z"};
 
@@ -131,6 +149,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 2 :  // for small alphabets
+                title_tv.setText("Small Alphabets");
                 String tempArray2[]={"aa","bb","cc","dd","ee","ff","gg","hh","ii","jj",
                         "kk","ll","mm","nn","oo","pp","qq","rr","ss","tt","uu","vv","ww","xx","yy","zz"};
                 String tempArrayImgMp2[]={"a","b","c","d","e","f","g","h","i","j","k","l","m"
@@ -146,10 +165,11 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 3 :  // for animals
+                title_tv.setText("Animals");
                 String tempArray3[]={"alligator","anteater","ape","bear","buffalo","camel","cheetah","chimpanzee","deer",
                 "dinosaur","donkey","elephant","elephantseal","fox","giraffe","gorilla","hamster","hippopotamus","horse",
-                        "hyena","jackal","jaguar","kangaroo","lion","mangoose","monkey","moose","panther","polarbear",
-                        "porcupin","rabbit","raccoon","reindeer","rhinoceros","snake","tiger","ultrasaurus","walrus","yak","zebra"};
+                        "hyena","jackal","jaguar","kangaroo","lion","mongoose","monkey","moose","panther","polarbear",
+                        "porcupine","rabbit","raccoon","reindeer","rhinoceros","snake","tiger","ultrasaurus","walrus","yak","zebra"};
                 String tempArrayImgMp3[]=tempArray3;
 
                 noOfViewPage=tempArray3.length;
@@ -161,6 +181,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 4 :  // for birds
+                title_tv.setText("Birds");
                 String tempArray4[]= {"crane","crow","cuckoo","duck","eagle","hen","kingfisher","ostrich",
                         "owl","parrot","peacock","pelican","pigeon","redparrot","rooster","seagull",
                         "sparrow","stork","swan","turkey","woodpecker"};
@@ -175,6 +196,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 5 :  // for body parts
+                title_tv.setText("Body Parts");
                 String tempArray5[]= {"ankle","arm","bodyparts","cheek","chest","chin","ears","elbow","eyes",
                         "fingers","foot","forehead","head","knee","leg","mouth","neck","nose","stomach",
                         "teeth","thigh","toes","tongue","wrist"};
@@ -189,6 +211,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 6 :  // for colors
+                title_tv.setText("Colors");
                 String tempArray6[]= {"black","blue","brown","green","grey","orange","pink",
                         "purple","red","violet","white","yellow"};
                 String tempArrayImgMp6[]=tempArray6;
@@ -202,6 +225,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 7 :  // for days
+                title_tv.setText("Days");
                 String tempArray7[]= {"monday","tuesday","wednesday","thursday","friday","saturday","sunday"};
                 String tempArrayImgMp7[]=tempArray7;
 
@@ -214,6 +238,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 8 :  // for fruits
+                title_tv.setText("Fruits");
                 String tempArray8[]= {"apple","apricot","avocado","banana","blackberry","blueberries",
                 "cherries","coconut","cranberries","cucumber","dates","fig","gojiberries","gooseberries",
                 "grapes","jackfruit","kiwi","lemon","lime","lychee","mango","mangoosteen","melon",
@@ -230,6 +255,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 9 :  // for months
+                title_tv.setText("Months");
                 String tempArray9[]= {"january","february","march","april","may","june","july","august",
                         "september","october","november","december"};
                 String tempArrayImgMp9[]=tempArray9;
@@ -243,6 +269,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 10 :  // for numbers
+                title_tv.setText("Numbers");
 //                String tempArray10[]= {};
 //                String tempArrayImgMp10[]=tempArray10;
 
@@ -256,9 +283,10 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 11 :  // for places
+                title_tv.setText("Places");
                 String tempArray11[]= {"airport","aquarium","beach","busstop","church","cinematheater",
                         "firestation","fuelstation","harbour","hospital","house","laboratory","library",
-                "mosque","museaum","policestation","postoffice","powerplant","railwaystation","restaurant",
+                "mosque","museum","policestation","postoffice","powerplant","railwaystation","restaurant",
                 "school","stadium","temple","themepark","zoo"};
                 String tempArrayImgMp11[]=tempArray11;
 
@@ -271,6 +299,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 12 :  // for profession
+                title_tv.setText("Profession");
                 String tempArray12[]= {"artist","astronaut","baker","captain","carpenter","chef","deliveryboy",
                 "doctor","driver","fireman","fisherman","joker","magician","mason","mechanic","nurse",
                 "painter","pilot","postman","potter","scientist","sculptor","soldier","teacher","veterinarydoctor"};
@@ -285,6 +314,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 13 :  // for shapes
+                title_tv.setText("Shapes");
                 String tempArray13[]= {"circle","cross","diamond","heart","hexagon","octagon","parallelogram",
                 "pentagon","quadrant","rectangle","semicircle","square","star","trapezoid","triangle"};
                 String tempArrayImgMp13[]=tempArray13;
@@ -298,6 +328,7 @@ Log.d("mainpagesel","selected i="+i);
                 }
                 break;
             case 14 :  // for solar systems
+                title_tv.setText("Solar Systems");
                 String tempArray14[]= {"earth","jupiter","mars","mercury","neptune","saturn","uranus","venus"};
                 String tempArrayImgMp14[]=tempArray14;
 
@@ -309,20 +340,41 @@ Log.d("mainpagesel","selected i="+i);
                     mp_name[i] = tempArrayImgMp14[i];
                 }
                 break;
+            case 15 :  // for vegetales
+                title_tv.setText("Vegetables");
+                String tempArray15[]= {"artichoke","beetroot","bittergourd","broccoli","cabbage","capsicum","carrot",
+                "cauliflower","celery","chayote","chilli","curryleaves","drumstick","eggplant","garlic","ginger",
+                "greenbeans","ivygourd","ladiesfinger","limabeans","maize","mushroom","onion","pea","potato","pumpkin",
+                "radish","ridgedgourd","scallion","spinach","yam","zucchini"};
+                String tempArrayImgMp15[]=tempArray15;
+
+                noOfViewPage=tempArray15.length;
+                img_name=new String[noOfViewPage];
+                mp_name=new String[noOfViewPage];
+                for (int i=0;i<noOfViewPage;i++) {
+                    img_name[i] = tempArray15[i];
+                    mp_name[i] = tempArrayImgMp15[i];
+                }
+                break;
+            case 16 :  // for vhicles
+                title_tv.setText("Vehicles");
+                String tempArray16[]= {"aeroplane","airballoon","ambulance","armytanker","auto","bicycle","bike",
+                "boat","bullockcart","bus","car","caravel","chariot","chopper","concretemixer","crane2","dirtbike",
+                "doubledeckerbus","fireengine","glider","helicopter","horsecart","iceboat","jeep","jet","kayak",
+                "lorry","minibus","motorboat","narrowboat","offroad","pedalboat","policecar","proclain","rickshaw",
+                "roadroller","rocket","scooter","ship","submarine","tankerlorry","taxi","tractor","train","tricycle",
+                "truck","unicycle","van","yacht","zeppelin"};
+                String tempArrayImgMp16[]=tempArray16;
+
+                noOfViewPage=tempArray16.length;
+                img_name=new String[noOfViewPage];
+                mp_name=new String[noOfViewPage];
+                for (int i=0;i<noOfViewPage;i++) {
+                    img_name[i] = tempArray16[i];
+                    mp_name[i] = tempArrayImgMp16[i];
+                }
+                break;
         }
-       /* if (menu==1) {
-            String tempArray[]={"a","b","c","d","e","f","g","h","i","j","k","l","m"
-                    ,"n","o","p","q","r","s","t","u","v","w","x","y","z"};
-            for (int i=0; i<noOfViewPage; i++)
-                img_name[i]=tempArray[i];
-
-
-        } else {
-           String tempArray[]={"aa","bb","cc","dd","ee","ff","gg","hh","ii","jj",
-                    "kk","ll","mm","nn","oo","pp","qq","rr","ss","tt","uu","vv","ww","xx","yy","zz"};
-            for (int i=0;i<26;i++)
-                img_name[i]=tempArray[i];
-        }*/
 
         //set image resources by image name
         image_resource=new int[noOfViewPage];
@@ -331,8 +383,7 @@ Log.d("mainpagesel","selected i="+i);
         }
 
         //set sound for alphabets
-//        String tempArrayImgMp[]={"a","b","c","d","e","f","g","h","i","j","k","l","m"
-//                ,"n","o","p","q","r","s","t","u","v","w","x","y","z"};
+
         mp_resource=new int[noOfViewPage];
         for (int i=0; i<noOfViewPage; i++) {
             mp_resource[i]=this.getResources().getIdentifier(mp_name[i],"raw", this.getPackageName());

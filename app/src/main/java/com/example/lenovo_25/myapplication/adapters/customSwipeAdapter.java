@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lenovo_25.myapplication.ImageResource;
 import com.example.lenovo_25.myapplication.R;
@@ -29,7 +30,7 @@ public class customSwipeAdapter extends PagerAdapter {
     private String[] img_name;
 //    ImageResource imageResource;
     ArrayList<ImageResource> resources;
-//    ArrayList<MediaPlayer> mps;
+//    public static ArrayList<MediaPlayer> mps;
     private Context ctx;
     public static MediaPlayer mp;
     private LayoutInflater layoutInflater;
@@ -37,10 +38,15 @@ public class customSwipeAdapter extends PagerAdapter {
     public customSwipeAdapter(Context ctx, ArrayList<ImageResource> imageResource) {
         this.ctx = ctx;
         this.resources=imageResource;
-      /*  mps=new ArrayList<>();
+       /* mps=new ArrayList<>();
         for (int i=0; i<imageResource.size(); i++) {
-            Log.d("adapter", "mp=" + imageResource.get(i).getImageName() + " i=" + i);
-            mps.add(MediaPlayer.create(ctx, imageResource.get(i).getMpName()));
+            Log.d("adapter", "mp=" + imageResource.get(i).getMpName() + " i=" + i);
+            try {
+                mps.add(MediaPlayer.create(ctx, imageResource.get(i).getMpName()));
+            } catch (Exception e) {
+                Toast.makeText(ctx, "error:"+e, Toast.LENGTH_SHORT).show();
+                Log.d("customcuns",imageResource.get(i).getImageName());
+            }
         }*/
 //        this.imageResource=imageResource;
 //        this.image_resource=imageResource.getImageResource();
@@ -53,7 +59,7 @@ public class customSwipeAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         layoutInflater=(LayoutInflater)ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item_view=layoutInflater.inflate(R.layout.swipe_layout,container,false);
         ImageView imageView=(ImageView) item_view.findViewById(R.id.image_view);
@@ -84,6 +90,7 @@ public class customSwipeAdapter extends PagerAdapter {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+//                    mps.get(position).start();
                     mp.start();
                 }
             });

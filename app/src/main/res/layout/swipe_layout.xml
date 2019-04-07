@@ -8,21 +8,22 @@
     android:paddingLeft="50dp"
     android:paddingRight="50dp">
 
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:layout_weight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
     <TextView
         android:id="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello World"
-        android:textSize="18sp"
+        android:textSize="28sp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="20dp"
         android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="50dp"
-        android:paddingTop="20dp"
-        android:scaleType="fitXY"
-        app:srcCompat="@mipmap/ic_launcher_round" />
 
 </LinearLayout>
